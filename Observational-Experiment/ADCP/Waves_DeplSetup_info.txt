@@ -1,0 +1,21 @@
+---------Deployment Summary--------------------
+1080 Bursts, Collected Once Every 0.33 Hours
+Each Burst Contains  1200 Samples, Taken at 1.0 Hz.
+
+Start Time                             01/14/16    10:00
+Stop Time                              01/29/16    09:40
+Average ADCP Depth                     8.94 meters
+System Altitude Above Bottom           0.50 meters
+Heading Magnetic Variation             0 Deg.
+---------Processing Summary--------------------
+Processed By WavesMon Version          1. 5
+Bins Used For Directional Spectrum     8,9,10,
+Bins Used For Hieght Spectrum          8,9,10,
+Height Spectrum Cut-Off Freq.          0.50 Hz.
+Directional Spectrum Cut-Off Freq.     0.49 Hz.
+Height Spectrum Delta Freq.            0.0078 Hz.
+Directional Spectrum Delta Freq.       0.0078 Hz.
+---------ADCP Set Up-------------------------------
+Bin Size                               0.50 meters.
+First Bin Above Transducer             1.67 meters.
+Total Number of Bins                   24.
