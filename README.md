@@ -5,6 +5,4 @@ Code utilized during the completion of the development of an integrated multi-tr
 
 The contents of this repository contain the bulk of MATLAB code that was written and used in the completion of a Master's of Science in Ocean Engineering by Corey Sullivan, December 2016
 
-The files included are data files and code that was used in the analysis of hydrostatics, dynamics, Aqua-FE results, and experimental observations
-There are individual readme files that describe the primary codes that are within the folders
-Some folders are designated sub-routines and the readme file notes what the subroutines pertain to
+The files included are data files and code that was used in the analysis of hydrostatics, dynamics, Aqua-FE results, and experimental observations. There are individual readme files that describe what is in the folders and touches on the functions of the primary codes that are within each of the subfolders. Some folders are designated sub-routines and the readme file notes what the subroutines pertain to.
