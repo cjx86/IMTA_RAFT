@@ -13,74 +13,74 @@ addpath(genpath('../functions'));
 
 % %Load filenames
 %  dep='First';
-% pathdir=['..\Data\' dep '\'];
+pathdir=['..\Data\' dep '\'];
 % 
-% dirData = dir(pathdir);      %# Get the data for the current directory
-% dirIndex = [dirData.isdir];  %# Find the index for directories
-% fileList = {dirData(~dirIndex).name}';  %# Get a list of the files
+dirData = dir(pathdir);      %# Get the data for the current directory
+dirIndex = [dirData.isdir];  %# Find the index for directories
+fileList = {dirData(~dirIndex).name}';  %# Get a list of the files
 % 
 % if strcmp(dep,'First')
 % 
-%     st_id=3; %First file of interest
-%     ids=st_id:length(fileList);
+    st_id=3; %First file of interest
+    ids=st_id:length(fileList);
 %     
 % end
 % 
-% %Pre-allocate
-% Disp_std=zeros(length(ids),3);
-% Ang_std=zeros(length(ids),3);
-% a_means=zeros(length(ids),3);
-% rot_means=zeros(length(ids),3);
-% batts=zeros(length(ids),1);
-% 
-% Sj1side20=zeros(length(ids),65,6); %Will vary with ensembles in mpnorm_fun
-% Sjarea20=zeros(length(ids),1,6);
-% tsvar20=zeros(length(ids),6);
-% 
-% %Spectrating options
-% padyes=0;
-% hannme=1; %Variance error comes from hanning=1...?; Fixed.
-% ensembles=1;
-% alph=0.05; %Confidence margin. I.e. alph=0.10 for 90% confidence. (See Bendat and Piersol, p. 90).
-% bands=1;
-% stds=100; %Standard deviations to filter--high # means don't filter
-% passes=1;
-% %Set number of indices over which to find a running mean. To just demean: mean_bands=0
-% mean_bands(1)=0; 
+%Pre-allocate
+Disp_std=zeros(length(ids),3);
+Ang_std=zeros(length(ids),3);
+a_means=zeros(length(ids),3);
+rot_means=zeros(length(ids),3);
+batts=zeros(length(ids),1);
+
+Sj1side20=zeros(length(ids),65,6); %Will vary with ensembles in mpnorm_fun
+Sjarea20=zeros(length(ids),1,6);
+tsvar20=zeros(length(ids),6);
+
+%Spectrating options
+padyes=0;
+hannme=1; %Variance error comes from hanning=1...?; Fixed.
+ensembles=1;
+alph=0.05; %Confidence margin. I.e. alph=0.10 for 90% confidence. (See Bendat and Piersol, p. 90).
+bands=1;
+stds=100; %Standard deviations to filter--high # means don't filter
+passes=1;
+%Set number of indices over which to find a running mean. To just demean: mean_bands=0
+mean_bands(1)=0; 
 
 
-%  for id=ids;
-%      kk=id+1-st_id;
-%      [date, time, con95, Disp, Ang, Disp_nf, Ang_nf, t_plot, batt, a_mean,a_mean_nf, rot_mean, bandfreqs, Sj1side20(kk,:,:), Sj1side30(kk,:,:), Sj1side_nf(kk,:,:), bands_IMU, bandwidth, Sjarea20(kk,:,:), tsvar20(kk,:), Sjarea30(kk,:,:), tsvar30(kk,:), Sjarea_nf(kk,:,:), tsvar_nf(kk,:)]=mpnorm_fun_CS([pathdir '\' fileList{id}],ensembles,padyes,hannme,stds,passes,mean_bands,alph);
-%          %Get information from raw data
-%          
-%      ts_plot(kk,:) = t_plot;    %time vector to plot the data
-%      Displ(kk,:,:) = Disp;   %Displacement 3, 2D matrices x,y,z respectively
-%      Angl(kk,:,:) = Ang;  %Rotation 3, 2D about: x,y,z respectively
-%      Displ_nf(kk,:,:) = Disp_nf;  
-%      Angl_nf(kk,:,:) = Ang_nf; 
-%      con95(:,:,kk)=con95;
-%      %bfreq(kk,:) = bandfreqs;
-%          
-%     
-%      Disp_std(kk,:)=std(Disp,1);     %Std dev of each displacement
-%      Ang_std(kk,:)=std(Ang,1);   %Std dev of each rotation
-%      clear('Disp','Ang');
-%      
-%      
-%      dates(kk,:)=date;   %Fill a matrix of each date for t.s. plotting
-%      times(kk,:)=time;   %Fill a matrix of times for t.s. plotting
-%      a_means(kk,:)=a_mean; %Array of mean accelerations
-%      a_means_nf(kk,:) = a_mean_nf;
-%      rot_means(kk,:)=rot_mean;   %Array of mean rotations
-%      batts(kk)=str2num(batt);    %Battery Output
-%  
-%  end
-%  save('data_read_from_IMU.mat')
+ for id=ids
+     kk=id+1-st_id;
+     [date, time, con95, Disp, Ang, Disp_nf, Ang_nf, t_plot, batt, a_mean,a_mean_nf, rot_mean, bandfreqs, Sj1side20(kk,:,:), Sj1side30(kk,:,:), Sj1side_nf(kk,:,:), bands_IMU, bandwidth, Sjarea20(kk,:,:), tsvar20(kk,:), Sjarea30(kk,:,:), tsvar30(kk,:), Sjarea_nf(kk,:,:), tsvar_nf(kk,:)]=mpnorm_fun_CS([pathdir '\' fileList{id}],ensembles,padyes,hannme,stds,passes,mean_bands,alph);
+         %Get information from raw data
+         
+     ts_plot(kk,:) = t_plot;    %time vector to plot the data
+     Displ(kk,:,:) = Disp;   %Displacement 3, 2D matrices x,y,z respectively
+     Angl(kk,:,:) = Ang;  %Rotation 3, 2D about: x,y,z respectively
+     Displ_nf(kk,:,:) = Disp_nf;  
+     Angl_nf(kk,:,:) = Ang_nf; 
+     con95(:,:,kk)=con95;
+     %bfreq(kk,:) = bandfreqs;
+         
+    
+     Disp_std(kk,:)=std(Disp,1);     %Std dev of each displacement
+     Ang_std(kk,:)=std(Ang,1);   %Std dev of each rotation
+     clear('Disp','Ang');
+     
+     
+     dates(kk,:)=date;   %Fill a matrix of each date for t.s. plotting
+     times(kk,:)=time;   %Fill a matrix of times for t.s. plotting
+     a_means(kk,:)=a_mean; %Array of mean accelerations
+     a_means_nf(kk,:) = a_mean_nf;
+     rot_means(kk,:)=rot_mean;   %Array of mean rotations
+     batts(kk)=str2num(batt);    %Battery Output
+ 
+ end
+ save('data_read_from_IMU.mat')
 
-load('data_read_from_IMU.mat')
+%load('data_read_from_IMU.mat')
 
-close all
+%close all
 
     %Produce the T.S. from each 18  min sample
 ts_plot = ts_plot(1,:);   
