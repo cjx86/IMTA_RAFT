@@ -1,2 +1,5 @@
-Code used to analyze the outputs from the loadcells
+The contents in this folder are the data from the loadcells. There are two subfolders that contain the actual output files from the loadcell recorders. The matlab code is set up to pull directly from these files upon an input of which loadcell (2 or 3) you would like to look at. 
+
+During deployment loadcell 3 (the loadcell on the shore side of the mooring) experienced a malfunction  and much of that data was not able to be analyzed.
+
 The files were too large to upload directly to GitHub as is. To run the code, the files will need to be unzipped.
