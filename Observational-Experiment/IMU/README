@@ -1,1 +1,5 @@
-Code used to analyze the results from the IMU
+The contents in this folder are the data from the IMU computing stack and the code to analyze it. 
+
+The code was originally written to be able to pull directly from the IMU output in the "Data" file and is how it is currently set up to run. 
+
+A secondary option was coded to read in the raw data once and save it as the .mat file, "data_read_from_IMU" and then future executiaons of the code would read from that file to save time.
