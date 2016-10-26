@@ -1,6 +1,10 @@
-README
+The contents in this folder are the outputs from the finite element analysis program, AquaFE. There were two sets of trials run in AquaFE.
 
-The results and code in this folder were used for analysis of AquaFE. The prediction subfolder contains the results form the first AquaFE trials that were run during the design portion of the raft.
+The first trials, within the "prediction_" subfolders, are pertinent to the design phase of the raft, in which various frequency waves were run in the simulations form two directions. One in which the waves were incident on the short side of the raft model and the other in  which the waves were incident on the long side of the raft model.
 
-The observational comparison folder shows the results from the second set of trials that were completed to evaluate the AquaFE software.
+The second set of trials, in the "observational_comparison" folder are trials run withn typical values of current and wave properties that were recorded during the observational experiment. These were run as an evaulation of AquaFE.
+
+each folder contains .txt output files from AquaFE and the codes read them in directly.
+
+The net_mesh_calcs.m file is the code used to find out net mesh coefficients needed to input into AquaFE input files.
 
