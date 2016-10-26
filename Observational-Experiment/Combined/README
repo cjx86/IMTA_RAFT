@@ -1,1 +1,7 @@
-Codes that combine the results from the ADCP, IMU and Load Cells, and compare the results.
+The contents in this folder combine the outputs from each of the individual sensor codes and uses that data to make comparisons between sensor outputs.
+
+mkRAOs_CS pulls in data (from the "Data" folder in the observational experiment folder) from all of the sensors and compares it.
+
+adcp_LC compares adcp and loadcell data, as those two sensors recorded for a longer period of time than the IMU.
+
+
