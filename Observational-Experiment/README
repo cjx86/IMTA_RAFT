@@ -1,1 +1,7 @@
-The contents of this folder include the data and code to analyze the results from the observational experiment.
+The contents in this folder are the data from each of the sensors that was deployed during the observational experiment at the UNH Aquaculture site in January 2016.
+
+Each subfolder contains the relevant data from the sensor as well as the code to analyze the data and reproduce plots from the thesis. The code has been re-written to run as is in the current folder structure.
+
+Each individual sensor analysis output is saved in the "Data" folder. It is from this folder that the code in the "Combined" reads in data.
+
+The "functions" folder is a series of subroutines that were utilized in various loccations in the code. Many of them are self explanatory in their naming scheme.
