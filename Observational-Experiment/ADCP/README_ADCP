@@ -1,1 +1,5 @@
-The contents in this folder are the data exported from the Teledyne software, Velocity, that was used to extract data from the ADCP. There are current files and wave files that are read in by the adcp_data.m code
+The contents in this folder are the data exported from the Teledyne software, Velocity, that was used to extract data from the ADCP. 
+
+There are current files and wave files that are read in by the adcp_data.m code
+
+The current file was too large to upload directly to GitHub, so it will need to be unzippped.
