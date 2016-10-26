@@ -1,1 +1,1 @@
-This folder contains the data from the Sentinel V ADCP that was deployed during the observational experiment and the code that was used to analyze that data. The file produced by the Teledyne software was too large to upload to GitHub as is. To run the adcp_data.m matlab code, the file will need to be unzipped.
+The contents in this folder are the data exported from the Teledyne software, Velocity, that was used to extract data from the ADCP. There are current files and wave files that are read in by the adcp_data.m code
